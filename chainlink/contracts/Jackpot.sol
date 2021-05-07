@@ -36,10 +36,6 @@ contract Jackpot is VRFConsumerBase {
         players.push(msg.sender);
         lotterySize += msg.value;
         playerInfo[msg.sender] = _name;
-
-        if (players.size >= maxPlayers) {
-            getRandomNumber();
-        }
     }
 
     function getRandomNumber(uint256 userProvidedSeed)
